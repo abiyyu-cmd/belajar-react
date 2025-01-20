@@ -4,6 +4,7 @@ import InputForm from "../elements/input/Index";
 import { login } from "../../services/auth.service";
 import { useRef } from "react";
 
+
 const FormLogin = () => {
     const [loginFailed, setLoginFailed] = useState("");
     const handleLogin = (event) => {
@@ -32,24 +33,25 @@ const FormLogin = () => {
       usernameRef.current.focus();
     }, []);
     return (
-        <form onSubmit={handleLogin}>
-        <InputForm
-        label="Username" 
-        type="text" 
-        placeholder="John Doe" 
-        name="username"
-        ref={usernameRef}
-        />
-        <InputForm
-        label="Password" 
-        type="password" 
-        placeholder="*******" 
-        name="password"
-        />
-        
-        <Button classname ="bg-blue-600 w-full" type="submit">Login</Button>
-        {loginFailed && <p className="text-red-500 text-center mt-5">{loginFailed}</p>}
-      </form>
+      <form onSubmit={handleLogin}
+      >
+      <InputForm
+      label="Username" 
+      type="text" 
+      placeholder="John Doe" 
+      name="username"
+      ref={usernameRef}
+      />
+      <InputForm
+      label="Password" 
+      type="password" 
+      placeholder="*******" 
+      name="password"
+      />
+      
+      <Button classname ="bg-blue-600 w-full" type="submit">Login</Button>
+      {loginFailed && <p className="text-red-500 text-center mt-5">{loginFailed}</p>}
+    </form>
     )
 }
 

@@ -65,12 +65,21 @@ const ProductsPage = () => {
         }
     }, [cart]);
         
-
     return (
         <Fragment>
-        <div className="flex justify-end h-20 bg-blue-600 text-white items-center px-10">
+            {/* Navbar */}
+            <div className="flex justify-between h-20 bg-blue-600 text-white items-center px-10">
+                <img 
+                src= "../../Images/test.jpg"
+                alt="Logo"
+                className="h-36 w-auto object-contain ml-0"
+                />
+
+        <div className="flex items-center">
             {username}
             <Button classname="ml-5 bg-black" onClick={handleLogout}>Logout</Button>
+        </div>
+
         </div>
         <div className="flex justify-center py-5">
            <div className="w-4/6 flex flex-wrap">
